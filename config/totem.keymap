@@ -144,11 +144,18 @@
             tap-ms = <30>;
         };
 
-        comma_space: comma_space {
+        comma_space_en: comma_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp KP_COMMA &kp SPACE>;
+            bindings = <&kp LS(COMMA) &kp SPACE>;
             label = "COMMA_SPACE";
+        };
+
+        comma_space_ru: comma_space_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&en LS(COMMA) &kp SPACE>;
+            label = "COMMA_SPACE_RU";
         };
     };
 
@@ -159,8 +166,8 @@
             bindings = <
        &kp Q  &kp W        &kp E        &mt LG(R) R  &kp T          &kp Y        &kp U    &kp I       &kp O  &kp P
        &kp A  &kp S        &kp D        &kp F        &kp G          &kp H        &kp J    &kp K       &kp L  &kp SEMI
-&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N        &kp M    &none       &none  &none     &comma_space
-                           &key_repeat  &lt 4 ENTER  &lt 3 SPACE    &lt 6 COLON  &kp ESC  &sk LSHIFT
+&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N        &kp M    &none       &none  &none     &comma_space_en
+                           &key_repeat  &lt 4 ENTER  &lt 2 SPACE    &lt 6 COLON  &kp ESC  &sk LSHIFT
             >;
         };
 
@@ -168,7 +175,7 @@
             bindings = <
        &kp Q  &kp W        &kp E        &mt LG(R) R  &mt TILDE T    &kp Y         &kp U              &kp I       &kp O       &kp P
        &kp A  &kp S        &kp D        &kp F        &kp G          &kp H         &kp J              &kp K       &kp L       &kp SEMI
-&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N         &mt RIGHT_BRACE M  &kp COMMA   &kp PERIOD  &kp SINGLE_QUOTE  &comma_space
+&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N         &mt RIGHT_BRACE M  &kp COMMA   &kp PERIOD  &kp SINGLE_QUOTE  &comma_space_ru
                            &key_repeat  &lt 5 ENTER  &lt 3 SPACE    &lt 6 LS(N6)  &kp ESC            &sk LSHIFT
             >;
         };
@@ -184,10 +191,10 @@
 
         sym_ru {
             bindings = <
-       &en CARET     &kp SINGLE_QUOTE  &en LEFT_BRACE    &en RIGHT_BRACE    &en GRAVE            &en AT            &en HASH   &en DOLLAR  &en AMPS       &en PIPE
-       &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp SEMI             &kp PLUS          &kp EXCL   &kp MINUS   &kp QUESTION   &kp EQUAL
-&none  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LEFT_BRACKET  &en RIGHT_BRACKET  &kp DOUBLE_QUOTES    &kp ASTRK         &kp SLASH  &kp UNDER   &kp BACKSLASH  &en TILDE  &none
-                                       &ru LS(LA(N8))    &ru LA(H)          &trans               &lt 6 LS(PERIOD)  &kp DOT    &kp PRCNT
+       &en CARET     &en SINGLE_QUOTE  &en LEFT_BRACE    &en RIGHT_BRACE    &en GRAVE            &en AT           &en HASH           &en DOLLAR  &en AMPS       &en PIPE
+       &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp LS(N4)           &kp PLUS         &kp EXCL           &kp MINUS   &kp LS(N7)     &kp EQUAL
+&none  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LEFT_BRACKET  &en RIGHT_BRACKET  &kp DOUBLE_QUOTES    &kp ASTRK        &kp LS(BACKSLASH)  &kp UNDER   &kp BACKSLASH  &en TILDE  &none
+                                       &ru LS(LA(N8))    &ru LA(H)          &trans               &lt 6 LS(SLASH)  &kp SLASH          &kp PRCNT
             >;
         };
 
@@ -204,7 +211,7 @@
             bindings = <
        &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &mt LA(MINUS) MINUS  &kp N7   &kp N8     &kp N9  &kp COLON
        &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS             &kp N4   &kp N5     &kp N6  &kp N0
-&none  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK            &kp N1   &kp N2     &kp N3  &kp SLASH  &none
+&none  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK            &kp N1   &kp N2     &kp N3  &kp KP_DIVIDE  &none
                                                      &trans                 &trans                 &trans                   &lt 6 COMMA          &kp DOT  &kp PRCNT
             >;
         };
