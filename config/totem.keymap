@@ -72,7 +72,7 @@
             bindings = <
        &kp Q  &kp W        &kp E        &mt LG(R) R  &kp T          &kp Y      &kp U    &kp I       &kp O  &kp P
        &kp A  &kp S        &kp D        &kp F        &kp G          &kp H      &kp J    &kp K       &kp L  &kp SEMI
-&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N      &kp M    &none       &none  &none     &kp APOS
+&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N      &kp M    &none       &none  &kp A     &kp APOS
                            &key_repeat  &lt 3 ENTER  &lt 2 SPACE    &kp COLON  &kp ESC  &sk LSHIFT
             >;
         };
