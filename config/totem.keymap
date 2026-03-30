@@ -13,6 +13,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 &mt {
     quick-tap-ms = <180>;
@@ -57,7 +58,7 @@
             tapping-term-ms = <180>;
         };
     };
-    
+
     combos {
         compatible = "zmk,combos";
 
@@ -143,6 +144,12 @@
             tap-ms = <30>;
         };
 
+        comma_space: comma_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_COMMA &kp SPACE>;
+            label = "COMMA_SPACE";
+        };
     };
 
     keymap {
@@ -150,46 +157,64 @@
 
         en {
             bindings = <
-       &kp Q  &kp W        &kp E        &mt LG(R) R  &kp T          &kp Y      &kp U    &kp I       &kp O  &kp P
-       &kp A  &kp S        &kp D        &kp F        &kp G          &kp H      &kp J    &kp K       &kp L  &kp SEMI
-&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N      &kp M    &none       &none  &kp A     &kp APOS
-                           &key_repeat  &lt 3 ENTER  &lt 2 SPACE    &kp COLON  &kp ESC  &sk LSHIFT
+       &kp Q  &kp W        &kp E        &mt LG(R) R  &kp T          &kp Y        &kp U    &kp I       &kp O  &kp P
+       &kp A  &kp S        &kp D        &kp F        &kp G          &kp H        &kp J    &kp K       &kp L  &kp SEMI
+&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N        &kp M    &none       &none  &none     &comma_space
+                           &key_repeat  &lt 4 ENTER  &lt 3 SPACE    &lt 6 COLON  &kp ESC  &sk LSHIFT
             >;
         };
 
         ru {
             bindings = <
-       &kp Q  &kp W        &kp E        &mt LG(R) R  &kp T          &kp Y      &kp U    &kp I       &kp O       &kp P
-       &kp A  &kp S        &kp D        &kp F        &kp G          &kp H      &kp J    &kp K       &kp L       &kp SEMI
-&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N      &kp M    &kp COMMA   &kp PERIOD  &kp SINGLE_QUOTE  &none
-                           &key_repeat  &lt 3 ENTER  &lt 2 SPACE    &kp COLON  &kp ESC  &sk LSHIFT
-            >;
-        };
-
-        nav_num {
-            bindings = <
-                   &kp LA(BACKSPACE)   &kp BACKSPACE  &kp UP     &kp DELETE     &kp LA(DELETE)        &kp N5      &kp N6           &kp N7       &kp N8    &kp N9
-                   &kp LA(LEFT_ARROW)  &kp LEFT       &kp DOWN   &kp RIGHT      &kp LA(RIGHT)         &kp N0      &kp N1           &kp N2       &kp N3    &kp N4
-&kp LG(BACKSPACE)  &kp LG(UP_ARROW)    &kp LG(LEFT)   &kp ENTER  &kp LG(RIGHT)  &kp LG(DOWN_ARROW)    &kp PERIOD  &kp PLUS         &kp MINUS    &kp STAR  &kp FSLH  &kp CARET
-                                                      &trans     &trans         &trans                &kp EQUAL   &kp RIGHT_SHIFT  &kp PERCENT
+       &kp Q  &kp W        &kp E        &mt LG(R) R  &mt TILDE T    &kp Y         &kp U              &kp I       &kp O       &kp P
+       &kp A  &kp S        &kp D        &kp F        &kp G          &kp H         &kp J              &kp K       &kp L       &kp SEMI
+&none  &kp Z  &mt LG(X) X  &mt LG(C) C  &mt LG(V) V  &kp B          &kp N         &mt RIGHT_BRACE M  &kp COMMA   &kp PERIOD  &kp SINGLE_QUOTE  &comma_space
+                           &key_repeat  &lt 5 ENTER  &lt 3 SPACE    &lt 6 LS(N6)  &kp ESC            &sk LSHIFT
             >;
         };
 
         sym_en {
             bindings = <
-                    &kp CARET     &kp SINGLE_QUOTE  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE              &kp AT        &kp HASH   &kp DOLLAR  &kp AMPS       &kp PIPE
-                    &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp SEMI               &kp PLUS      &kp EXCL   &kp MINUS   &kp QUESTION   &kp EQUAL
-            &none   &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOUBLE_QUOTES      &kp ASTRK     &kp SLASH  &kp UNDER   &kp BACKSLASH  &kp TILDE  &none
-                                                    &ru LS(LA(N8))    &ru LA(H)          &trans                 &kp COMMA     &kp DOT    &kp PRCNT
+       &kp CARET     &kp SINGLE_QUOTE  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp GRAVE            &kp AT     &kp HASH   &kp DOLLAR  &kp AMPS       &kp PIPE
+       &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp SEMI             &kp PLUS   &kp EXCL   &kp MINUS   &kp QUESTION   &kp EQUAL
+&none  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOUBLE_QUOTES    &kp ASTRK  &kp SLASH  &kp UNDER   &kp BACKSLASH  &kp TILDE  &none
+                                       &ru LS(LA(N8))    &ru LA(H)          &trans               &kp COMMA  &kp DOT    &kp PRCNT
+            >;
+        };
+
+        sym_ru {
+            bindings = <
+       &en CARET     &kp SINGLE_QUOTE  &en LEFT_BRACE    &en RIGHT_BRACE    &en GRAVE            &en AT            &en HASH   &en DOLLAR  &en AMPS       &en PIPE
+       &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp SEMI             &kp PLUS          &kp EXCL   &kp MINUS   &kp QUESTION   &kp EQUAL
+&none  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LEFT_BRACKET  &en RIGHT_BRACKET  &kp DOUBLE_QUOTES    &kp ASTRK         &kp SLASH  &kp UNDER   &kp BACKSLASH  &en TILDE  &none
+                                       &ru LS(LA(N8))    &ru LA(H)          &trans               &lt 6 LS(PERIOD)  &kp DOT    &kp PRCNT
             >;
         };
 
         num_en {
             bindings = <
-                    &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))       &kp MINUS     &kp N7     &kp N8      &kp N9     &kp COLON
-                    &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))       &kp PLUS      &kp N4     &kp N5      &kp N6     &kp N0
-            &none   &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))       &kp ASTRK     &kp N1     &kp N2      &kp N3     &kp SLASH    &none
-                                                                  &trans                 &trans                 &trans                      &kp COMMA     &kp DOT    &kp PRCNT
+       &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &kp MINUS    &kp N7   &kp N8     &kp N9  &kp COLON
+       &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS     &kp N4   &kp N5     &kp N6  &kp N0
+&none  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK    &kp N1   &kp N2     &kp N3  &kp SLASH  &none
+                                                     &trans                 &trans                 &trans                   &lt 6 COMMA  &kp DOT  &kp PRCNT
+            >;
+        };
+
+        num_ru {
+            bindings = <
+       &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &mt LA(MINUS) MINUS  &kp N7   &kp N8     &kp N9  &kp COLON
+       &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS             &kp N4   &kp N5     &kp N6  &kp N0
+&none  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK            &kp N1   &kp N2     &kp N3  &kp SLASH  &none
+                                                     &trans                 &trans                 &trans                   &lt 6 COMMA          &kp DOT  &kp PRCNT
+            >;
+        };
+
+        nav {
+            bindings = <
+        &trans        &trans     &trans     &trans      &kp DEL      &kp BSPC      &kp LC(LEFT)    &kp UP        &kp LC(RIGHT)  &kp LC(LG(Q))
+        &kp LEFT_GUI  &kp LCTRL  &kp LALT   &kp LSHIFT  &kp ESC      &kp LA(LEFT)  &kp LEFT        &kp DOWN      &kp RIGHT      &kp LA(RIGHT)
+&trans  &trans        &trans     &mkp RCLK  &mkp LCLK   &trans       &kp LG(LEFT)  &msc SCRL_DOWN  &msc SCRL_UP  &none          &kp LG(RIGHT)  &none
+                                 &trans     &kp ENTER   &kp SPACE    &none         &none           &none
             >;
         };
 
@@ -218,12 +243,5 @@
         extra3 { status = "reserved"; };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        device {
-            if-layers = <2 3>;
-            then-layer = <4>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
