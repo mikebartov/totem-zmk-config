@@ -198,6 +198,18 @@
             key-positions = <13 24>;
             layers = <0 2 4 8>;
         };
+
+        cmb_shortcat {
+            bindings = <&kp LS(LG(SPACE))>;
+            key-positions = <16 6>;
+            layers = <0 1>;
+        };
+
+        cmb_cmd-palette {
+            bindings = <&kp LS(LG(P))>;
+            key-positions = <16 17>;
+            layers = <0 1>;
+        };
     };
 
     macros {
@@ -299,8 +311,8 @@
         ru {
             bindings = <
        &kp Q        &kp W         &kp E            &mt LG(R) R    &mt NON_US_BSLH T    &kp Y         &kp U                &mt O I      &mt LG(O) P   &mt LG(P) LEFT_BRACKET
-       &hml LGUI A  &hml LCTRL S  &hml LALT D      &hml LSHIFT F  &kp G                &kp H         &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
-&none  &kp Z        &mt LG(X) X   &mt LG(C) C      &mt LG(V) V    &kp B                &mt LG(N) N   &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
+       &hml LGUI A  &hml LCTRL S  &hml LALT D      &hml LSHIFT F  &lt 10 G             &lt 10 H      &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+&none  &lt 9 Z      &mt LG(X) X   &mt LG(C) C      &mt LG(V) V    &kp B                &mt LG(N) N   &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
                                   &lt_repeat 11 0  &lt 5 ENTER    &lt 3 SPACE          &lt 8 LS(N6)  &lt 7 ESC            &sk LSHIFT
             >;
         };
