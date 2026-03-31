@@ -11,7 +11,6 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -153,13 +152,13 @@
         cmb_bspc-word {
             bindings = <&kp LA(BSPC)>;
             key-positions = <5 15>;
-            layers = <6>;
+            layers = <8>;
         };
 
         cmb_del-word {
             bindings = <&kp LA(DELETE)>;
             key-positions = <4 14>;
-            layers = <6>;
+            layers = <8>;
         };
 
         cmb_emdash-ru {
@@ -189,13 +188,13 @@
         cmb_nbsp-ru {
             bindings = <&kp LA(SPACE)>;
             key-positions = <13 24>;
-            layers = <1 3 5 6>;
+            layers = <1 3 5 8>;
         };
 
         cmb_nbsp-en {
             bindings = <&ru LA(SPACE)>;
             key-positions = <13 24>;
-            layers = <0 2 4 6>;
+            layers = <0 2 4 8>;
         };
     };
 
@@ -281,7 +280,6 @@
             bindings = <&kp LS(SLASH) &kp SPACE>;
             label = "COMMA_SPACE_RU";
         };
-
     };
 
     keymap {
@@ -289,19 +287,19 @@
 
         en {
             bindings = <
-       &kp Q        &kp W         &kp E        &mt LG(R) R    &kp T          &kp Y        &kp U          &kp I        &kp O         &kp P
-       &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &kp G          &kp H        &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
-&none  &kp Z        &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B          &kp N        &kp M          &none        &none         &none           &comma_space_en
-                                  &key_repeat  &lt 4 ENTER    &lt 2 SPACE    &lt 6 COLON  &kp ESC        &sk LSHIFT
+       &kp Q        &kp W         &kp E            &mt LG(R) R    &kp T          &kp Y        &kp U          &kp I        &mt LG(O) O   &mt LG(P) P
+       &hml LGUI A  &hml LCTRL S  &hml LALT D      &hml LSHIFT F  &lt 10 G       &lt 10 H     &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+&none  &lt 9 Z      &mt LG(X) X   &mt LG(C) C      &mt LG(V) V    &kp B          &mt LG(N) N  &kp M          &none        &none         &none           &comma_space_en
+                                  &lt_repeat 11 0  &lt 4 ENTER    &lt 2 SPACE    &lt 8 COLON  &lt 6 ESC      &sk LSHIFT
             >;
         };
 
         ru {
             bindings = <
-       &kp Q        &kp W         &kp E        &mt LG(R) R    &mt NON_US_BSLH T    &kp Y         &kp U                &mt O I      &kp P         &kp LEFT_BRACKET
-       &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &kp G                &kp H         &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
-&none  &kp Z        &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B                &kp N         &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE  &comma_space_ru
-                                  &key_repeat  &lt 5 ENTER    &lt 3 SPACE          &lt 6 LS(N6)  &kp ESC              &sk LSHIFT
+       &kp Q        &kp W         &kp E            &mt LG(R) R    &mt NON_US_BSLH T    &kp Y         &kp U                &mt O I      &mt LG(O) P   &mt LG(P) LEFT_BRACKET
+       &hml LGUI A  &hml LCTRL S  &hml LALT D      &hml LSHIFT F  &kp G                &kp H         &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+&none  &kp Z        &mt LG(X) X   &mt LG(C) C      &mt LG(V) V    &kp B                &mt LG(N) N   &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
+                                  &lt_repeat 11 0  &lt 5 ENTER    &lt 3 SPACE          &lt 8 LS(N6)  &lt 7 ESC            &sk LSHIFT
             >;
         };
 
@@ -319,7 +317,7 @@
        &en CARET     &en SINGLE_QUOTE  &en LEFT_BRACE    &en RIGHT_BRACE    &en GRAVE            &en AT           &en HASH           &en DOLLAR  &en AMPS       &en PIPE
        &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp LS(N4)           &kp PLUS         &kp EXCL           &kp MINUS   &kp LS(N7)     &kp EQUAL
 &none  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LEFT_BRACKET  &en RIGHT_BRACKET  &kp DOUBLE_QUOTES    &kp ASTRK        &kp LS(BACKSLASH)  &kp UNDER   &kp BACKSLASH  &en TILDE  &none
-                                       &ru LS(LA(N8))    &ru LA(H)          &trans               &lt 6 LS(SLASH)  &kp SLASH          &kp PRCNT
+                                       &ru LS(LA(N8))    &ru LA(H)          &trans               &lt 8 LS(SLASH)  &kp SLASH          &kp PRCNT
             >;
         };
 
@@ -328,7 +326,7 @@
        &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &kp MINUS    &kp N7   &kp N8     &kp N9  &kp COLON
        &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS     &kp N4   &kp N5     &kp N6  &kp N0
 &none  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK    &kp N1   &kp N2     &kp N3  &kp SLASH  &none
-                                                     &trans                 &trans                 &trans                   &lt 6 COMMA  &kp DOT  &kp PRCNT
+                                                     &trans                 &trans                 &trans                   &lt 8 COMMA  &kp DOT  &kp PRCNT
             >;
         };
 
@@ -337,7 +335,25 @@
        &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &mt LA(MINUS) MINUS  &kp N7     &kp N8     &kp N9  &kp COLON
        &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS             &kp N4     &kp N5     &kp N6  &kp N0
 &none  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK            &kp N1     &kp N2     &kp N3  &kp KP_DIVIDE  &none
-                                                     &trans                 &trans                 &trans                   &lt 6 LS(SLASH)      &kp SLASH  &kp PRCNT
+                                                     &trans                 &trans                 &trans                   &lt 8 LS(SLASH)      &kp SLASH  &kp PRCNT
+            >;
+        };
+
+        macro_en {
+            bindings = <
+        &trans          &trans  &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
+        &kp LS(LG(N0))  &trans  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
+&trans  &trans          &trans  &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &kp LA(LC(A))   &kp LA(LC(R))      &kp LG(N8)          &kp LA(LC(LG(G)))  &trans
+                                &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
+            >;
+        };
+
+        macro_ru {
+            bindings = <
+        &trans          &trans  &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
+        &kp LS(LG(N0))  &trans  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
+&trans  &trans          &trans  &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &en LA(LC(A))   &en LA(LC(R))      &kp LG(N8)          &en LA(LC(LG(G)))  &trans
+                                &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
             >;
         };
 
@@ -350,74 +366,32 @@
             >;
         };
 
-        macro_en {
-            bindings = <
-        &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans                        &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &trans        &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP                     &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
-&trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans                        &trans             &kp LA(LC(A))   &kp LA(LC(R))      &kp LG(N8)          &kp LA(LC(LG(G)))    &trans  
-                                      &trans         &kp LG(ENTER)  &kp F1                        &trans             &trans          &kp LC(LG(C))
-            >;
-        };
-
-        macro_ru {
-            bindings = <
-        &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans                        &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &trans        &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP                     &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
-&trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans                        &trans             &en LA(LC(A))   &en LA(LC(R))      &kp LG(N8)          &en LA(LC(LG(G)))  &trans
-                                      &trans         &kp LG(ENTER)  &kp F1                        &trans             &trans          &kp LC(LG(C))
-            >;
-        };
-
         wind_man {
             bindings = <
-        &trans  &trans                          &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &trans                   &kp LG(MINUS)          &kp LS(LA(LG(W)))  &kp LS(LA(LG(E)))  &kp LS(LA(LG(R)))  &trans
-        &trans  &kp LA(LG(C))                   &kp LS(LC(TAB))       &kp LC(TAB)            &trans                   &kp LG(EQUAL)          &kp LS(LA(LG(S)))  &kp LS(LA(LG(D)))  &kp LS(LA(LG(F)))  &kp LS(LA(LG(G)))
-&trans  &trans  &kp LS(LA(LG(RIGHT_BRACKET)))   &kp LC(LG(W))         &kp LC(LG(E))          &trans                   &kp LG(N0)             &kp LS(LA(LG(X)))  &kp LS(LA(LG(C)))  &kp LS(LA(LG(V)))  &kp LS(LA(LG(A)))  &trans
-                                                &trans                &trans                 &mkp MCLK                &kp LS(LA(LC(LG(S))))  &trans             &trans
+        &trans  &trans                         &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &trans       &kp LG(MINUS)          &kp LS(LA(LG(W)))  &kp LS(LA(LG(E)))  &kp LS(LA(LG(R)))  &trans
+        &trans  &kp LA(LG(C))                  &kp LS(LC(TAB))       &kp LC(TAB)            &trans       &kp LG(EQUAL)          &kp LS(LA(LG(S)))  &kp LS(LA(LG(D)))  &kp LS(LA(LG(F)))  &kp LS(LA(LG(G)))
+&trans  &trans  &kp LS(LA(LG(RIGHT_BRACKET)))  &kp LC(LG(W))         &kp LC(LG(E))          &trans       &kp LG(N0)             &kp LS(LA(LG(X)))  &kp LS(LA(LG(C)))  &kp LS(LA(LG(V)))  &kp LS(LA(LG(A)))  &trans
+                                               &trans                &trans                 &mkp MCLK    &kp LS(LA(LC(LG(S))))  &trans             &trans
             >;
         };
 
         extra {
             bindings = <
-        &trans  &trans  &kp LA(LS(N4))  &trans                  &trans                            &kp F23  &kp F7  &kp F8  &kp F9  &trans
-        &trans  &trans  &trans          &kp LA(LS(N5))          &trans                            &kp F24  &kp F4  &kp F5  &kp F6  &trans
-&trans  &trans  &trans  &trans          &trans                  &trans                            &trans   &kp F1  &kp F2  &kp F3  &trans  &trans
-                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))            &trans   &trans  &trans
+        &trans  &trans  &kp LA(LS(N4))  &trans                  &trans                    &kp F23  &kp F7  &kp F8  &kp F9  &trans
+        &trans  &trans  &trans          &kp LA(LS(N5))          &trans                    &kp F24  &kp F4  &kp F5  &kp F6  &trans
+&trans  &trans  &trans  &trans          &trans                  &trans                    &trans   &kp F1  &kp F2  &kp F3  &trans  &trans
+                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &trans  &trans
             >;
         };
 
         media {
             bindings = <
-        &trans  &trans        &trans            &trans        &trans               &trans  &trans  &trans  &trans  &trans
-        &trans  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans               &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans               &trans  &trans  &trans  &trans  &trans  &trans
-                              &trans            &trans        &trans               &trans  &trans  &trans
+        &trans  &trans        &trans            &trans        &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans            &trans        &trans    &trans  &trans  &trans
             >;
         };
-
-        sym_func {
-            bindings = <
-           &kp ESC        &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none             &kp F1   &kp F2           &kp F3   &kp F4   &kp F5
-           &kp TAB        &kp LBKT              &kp RBKT               &kp ENTER         &kp BSLH          &kp F6   &kp F7           &kp F8   &kp F9   &kp F10
-&kp GRAVE  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp UNDERSCORE    &kp F11  &kp F12          &kp F13  &kp F14  &kp F15  &kp F16
-                                                &trans                 &trans            &trans            &none    &kp RIGHT_SHIFT  &none
-            >;
-        };
-
-        device {
-            bindings = <
-       &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-       &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none    &none         &none         &none         &none         &none
-&none  &none       &none                 &none                 &none             &none    &none         &none         &none         &none         &none         &bt BT_CLR
-                                         &none                 &none             &none    &none         &none         &none
-            >;
-        };
-
-        extra1 { status = "reserved"; };
-
-        extra2 { status = "reserved"; };
-
-        extra3 { status = "reserved"; };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
