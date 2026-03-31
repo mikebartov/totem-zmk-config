@@ -282,13 +282,6 @@
             label = "COMMA_SPACE_RU";
         };
 
-        new_section: new_section {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(K) &kp H>;
-            label = "NEW_SECTION";
-        };
-
     };
 
     keymap {
@@ -360,7 +353,7 @@
         macro_en {
             bindings = <
         &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans                        &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &new_section  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP                     &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
+        &kp LS(LG(N0))  &trans        &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP                     &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
 &trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans                        &trans             &kp LA(LC(A))   &kp LA(LC(R))      &kp LG(N8)          &kp LA(LC(LG(G)))    &trans  
                                       &trans         &kp LG(ENTER)  &kp F1                        &trans             &trans          &kp LC(LG(C))
             >;
@@ -369,7 +362,7 @@
         macro_ru {
             bindings = <
         &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans                        &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &new_section  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP                     &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
+        &kp LS(LG(N0))  &trans        &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP                     &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
 &trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans                        &trans             &en LA(LC(A))   &en LA(LC(R))      &kp LG(N8)          &en LA(LC(LG(G)))  &trans
                                       &trans         &kp LG(ENTER)  &kp F1                        &trans             &trans          &kp LC(LG(C))
             >;
@@ -389,7 +382,7 @@
         &trans  &trans  &kp LA(LS(N4))  &trans                  &trans                            &kp F23  &kp F7  &kp F8  &kp F9  &trans
         &trans  &trans  &trans          &kp LA(LS(N5))          &trans                            &kp F24  &kp F4  &kp F5  &kp F6  &trans
 &trans  &trans  &trans  &trans          &trans                  &trans                            &trans   &kp F1  &kp F2  &kp F3  &trans  &trans
-                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))            &trans   &trans  trans
+                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))            &trans   &trans  &trans
             >;
         };
 
