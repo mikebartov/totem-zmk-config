@@ -210,6 +210,24 @@
             key-positions = <16 17>;
             layers = <0 1>;
         };
+
+        cmb_caps {
+            bindings = <&kp CAPS>;
+            key-positions = <13 16>;
+            layers = <0 1>;
+        };
+
+        cmb_cyr-scha {
+            bindings = <&kp O>;
+            key-positions = <6 7>;
+            layers = <1>;
+        };
+
+        cmb_cyr-io {
+            bindings = <&kp NON_US_BSLH>;
+            key-positions = <2 3>;
+            layers = <1>;
+        };
     };
 
     macros {
@@ -294,6 +312,13 @@
             bindings = <&kp LS(SLASH) &kp SPACE>;
             label = "COMMA_SPACE_RU";
         };
+
+        add_section: add_section {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(K) &kp H>;
+            label = "ADD_SECTION";
+        };
     };
 
     keymap {
@@ -302,7 +327,7 @@
         en {
             bindings = <
        &kp Q        &kp W         &kp E            &mt LG(R) R    &kp T          &kp Y        &kp U          &kp I        &mt LG(O) O   &mt LG(P) P
-       &hml LGUI A  &hml LCTRL S  &hml LALT D      &hml LSHIFT F  &lt 10 G       &lt 10 H     &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+       &hml LGUI A  &hml LCTRL S  &hml LALT D      &hml LSHIFT F  &lt 12 G       &lt 12 H     &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
 &none  &lt 9 Z      &mt LG(X) X   &mt LG(C) C      &mt LG(V) V    &kp B          &mt LG(N) N  &kp M          &none        &none         &none           &comma_space_en
                                   &lt_repeat 11 0  &lt 4 ENTER    &lt 2 SPACE    &lt 8 COLON  &lt 6 ESC      &sk LSHIFT
             >;
@@ -355,19 +380,19 @@
 
         macro_en {
             bindings = <
-        &trans          &trans  &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &trans  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
-&trans  &trans          &trans  &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &kp LA(LC(A))   &kp LA(LC(R))      &kp LG(N8)          &kp LA(LC(LG(G)))  &trans
-                                &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
+        &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
+        &kp LS(LG(N0))  &add_section  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
+&trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &kp LA(LC(A))   &kp LA(LC(R))      &kp LG(N8)          &kp LA(LC(LG(G)))  &trans
+                                      &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
             >;
         };
 
         macro_ru {
             bindings = <
-        &trans          &trans  &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &trans  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
-&trans  &trans          &trans  &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &en LA(LC(A))   &en LA(LC(R))      &kp LG(N8)          &en LA(LC(LG(G)))  &trans
-                                &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
+        &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
+        &kp LS(LG(N0))  &add_section  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
+&trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &en LA(LC(A))   &en LA(LC(R))      &kp LG(N8)          &en LA(LC(LG(G)))  &trans
+                                      &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
             >;
         };
 
@@ -389,11 +414,11 @@
             >;
         };
 
-        extra {
+        extra_ru {
             bindings = <
-        &trans  &trans  &kp LA(LS(N4))  &trans                  &trans                    &kp F23  &kp F7  &kp F8  &kp F9  &trans
-        &trans  &trans  &trans          &kp LA(LS(N5))          &trans                    &kp F24  &kp F4  &kp F5  &kp F6  &trans
-&trans  &trans  &trans  &trans          &trans                  &trans                    &trans   &kp F1  &kp F2  &kp F3  &trans  &trans
+        &trans  &trans  &kp LA(LS(N4))  &kp LS(LA(N5))          &trans                    &kp F23  &kp F7  &kp F8  &kp F9  &trans
+        &trans  &trans  &trans          &trans                  &trans                    &kp F24  &kp F4  &kp F5  &kp F6  &trans
+&trans  &trans  &trans  &kp LA(N5)      &trans                  &trans                    &trans   &kp F1  &kp F2  &kp F3  &trans  &trans
                         &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &trans  &trans
             >;
         };
@@ -404,6 +429,15 @@
         &trans  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &trans    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans    &trans  &trans  &trans  &trans  &trans  &trans
                               &trans            &trans        &trans    &trans  &trans  &trans
+            >;
+        };
+
+        extra_en {
+            bindings = <
+        &trans  &trans  &ru LA(LS(N4))  &ru LS(LA(N5))          &trans                    &kp F23  &kp F7  &kp F8  &kp F9  &trans
+        &trans  &trans  &trans          &trans                  &trans                    &kp F24  &kp F4  &kp F5  &kp F6  &trans
+&trans  &trans  &trans  &ru LA(N5)      &trans                  &trans                    &trans   &kp F1  &kp F2  &kp F3  &trans  &trans
+                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &trans  &trans
             >;
         };
     };
