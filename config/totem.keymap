@@ -154,13 +154,13 @@
         cmb_bspc-word {
             bindings = <&kp LA(BSPC)>;
             key-positions = <5 15>;
-            layers = <13>;
+            layers = <10>;
         };
 
         cmb_del-word {
             bindings = <&kp LA(DELETE)>;
             key-positions = <4 14>;
-            layers = <13>;
+            layers = <10>;
         };
 
         cmb_emdash-ru {
@@ -226,7 +226,7 @@
         cmb_cyr-io {
             bindings = <&kp NON_US_BSLH>;
             key-positions = <2 3>;
-            layers = <1 13>;
+            layers = <1 10>;
         };
     };
 
