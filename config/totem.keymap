@@ -319,6 +319,20 @@
             bindings = <&kp LG(K) &kp H>;
             label = "ADD_SECTION";
         };
+
+        period_space_shift_en: period_nbsp_en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD &kp SPACE &sk LSHIFT>;
+            label = "PERIOD_NBSP_EN";
+        };
+
+        period_space_shift_ru: period_space_shift_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH &kp SPACE &sk LSHIFT>;
+            label = "PERIOD_SPACE_SHIFT_RU";
+        };
     };
 
     keymap {
@@ -326,19 +340,19 @@
 
         en {
             bindings = <
-       &kp Q        &kp W         &kp E        &mt LG(R) R    &kp T          &kp Y         &kp U          &kp I        &mt LG(O) O   &mt LG(P) P
-       &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &lt 8 G        &lt 8 H       &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
-&none  &lt 12 Z     &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B          &mt LG(N) N   &kp M          &none        &none         &none           &comma_space_en
-                                  &mo 11       &lt 4 ENTER    &lt 2 SPACE    &lt 10 COLON  &lt 6 ESC      &sk LSHIFT
+                        &kp Q        &kp W         &kp E        &mt LG(R) R    &kp T          &kp Y         &kp U          &kp I        &mt LG(O) O   &mt LG(P) P
+                        &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &lt 8 G        &lt 8 H       &hmr RSHIFT J  &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+&period_space_shift_en  &lt 12 Z     &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B          &mt LG(N) N   &kp M          &none        &none         &none           &comma_space_en
+                                                   &mo 11       &lt 4 ENTER    &lt 2 SPACE    &lt 10 COLON  &lt 6 ESC      &sk LSHIFT
             >;
         };
 
         ru {
             bindings = <
-       &kp Q        &kp W         &kp E        &mt LG(R) R    &mt NON_US_BSLH T    &kp Y          &kp U                &mt O I      &mt LG(O) P   &mt LG(P) LEFT_BRACKET
-       &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &lt 9 G              &lt 9 H        &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
-&none  &lt 12 Z     &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B                &mt LG(N) N    &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
-                                  &mo 11       &lt 5 ENTER    &lt 3 SPACE          &lt 10 LS(N6)  &lt 7 ESC            &sk LSHIFT
+                        &kp Q        &kp W         &kp E        &mt LG(R) R    &mt NON_US_BSLH T    &kp Y          &kp U                &mt O I      &mt LG(O) P   &mt LG(P) LEFT_BRACKET
+                        &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &lt 9 G              &lt 9 H        &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+&period_space_shift_ru  &lt 12 Z     &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B                &mt LG(N) N    &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
+                                                   &mo 11       &lt 5 ENTER    &lt 3 SPACE          &lt 10 LS(N6)  &lt 7 ESC            &sk LSHIFT
             >;
         };
 
@@ -364,7 +378,7 @@
             bindings = <
                        &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &kp MINUS     &kp N7   &kp N8     &kp N9  &kp COLON
                        &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS      &kp N4   &kp N5     &kp N6  &kp N0
-&kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK     &kp N1   &kp N2     &kp N3  &kp SLASH  &none
+&kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK     &kp N1   &kp N2     &kp N3  &kp SLASH  &comma_space_en
                                                                      &trans                 &trans                 &trans                   &lt 10 COMMA  &kp DOT  &kp PRCNT
             >;
         };
@@ -373,7 +387,7 @@
             bindings = <
                        &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &mt LA(MINUS) MINUS  &kp N7     &kp N8     &kp N9  &kp COLON
                        &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp PLUS             &kp N4     &kp N5     &kp N6  &kp N0
-&kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK            &kp N1     &kp N2     &kp N3  &kp KP_DIVIDE  &none
+&kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp ASTRK            &kp N1     &kp N2     &kp N3  &kp KP_DIVIDE  &comma_space_ru
                                                                      &trans                 &trans                 &trans                   &lt 10 LS(SLASH)     &kp SLASH  &kp PRCNT
             >;
         };
