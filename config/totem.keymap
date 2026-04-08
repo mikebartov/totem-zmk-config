@@ -50,10 +50,10 @@
             hold-trigger-on-release;
         };
 
-        lt_repeat: lt_repeat {
+        lt_custom: lt_custom {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_REPEAT";
-            bindings = <&mo>, <&key_repeat>;
+            label = "LT_CUSTOM";
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
@@ -477,10 +477,10 @@
 
         ru_caps {
             bindings = <
-                        &kp LS(Q)    &kp LS(W)     &kp LS(E)    &mt LG(R) R    &mt NON_US_BSLH T     &kp Y          &kp U                &mt O I      &mt LG(O) P   &mt LG(P) LEFT_BRACKET
-                        &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F  &lt 9 G               &lt 9 H        &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
-&period_space_shift_ru  &lt 12 Z     &mt LG(X) X   &mt LG(C) C  &mt LG(V) V    &kp B                 &mt LG(N) N    &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
-                                                   &mo 11       &lt 5 ENTER    &ru_caps_off SPACE    &lt 10 LS(N6)  &lt 7 ESC            &sk LSHIFT
+                        &kp LS(Q)    &kp LS(W)     &kp LS(E)    &mt LG(R) R         &mt NON_US_BSLH T     &kp Y          &kp U                &mt O I      &mt LG(O) P   &mt LG(P) LEFT_BRACKET
+                        &hml LGUI A  &hml LCTRL S  &hml LALT D  &hml LSHIFT F       &lt 9 G               &lt 9 H        &hmr RSHIFT J        &hmr RALT K  &hmr RCTRL L  &hmr RGUI SEMI
+&period_space_shift_ru  &lt 12 Z     &mt LG(X) X   &mt LG(C) C  &mt LG(V) V         &kp B                 &mt LG(N) N    &mt RIGHT_BRACKET M  &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE        &comma_space_ru
+                                                   &mo 11       &lt_custom 5 ENTER  &ru_caps_off SPACE    &lt 10 LS(N6)  &lt 7 ESC            &sk LSHIFT
             >;
         };
     };
