@@ -394,7 +394,7 @@
         sym_ru {
             bindings = <
        &en CARET     &en SINGLE_QUOTE  &en LEFT_BRACE    &en RIGHT_BRACE    &en GRAVE            &en AT            &en HASH           &en DOLLAR  &en AMPS       &en PIPE
-       &kp LT        &kp GT            &kp LPAR          &kp RPAR           &kp LS(N4)           &kp PLUS          &kp EXCL           &kp MINUS   &kp LS(N7)     &kp EQUAL
+       &en LT        &en GT            &kp LPAR          &kp RPAR           &kp LS(N4)           &kp PLUS          &kp EXCL           &kp MINUS   &en QMARK      &kp EQUAL
 &none  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LEFT_BRACKET  &en RIGHT_BRACKET  &kp DOUBLE_QUOTES    &kp ASTRK         &kp LS(BACKSLASH)  &kp UNDER   &kp BACKSLASH  &en TILDE  &none
                                        &ru LS(LA(N8))    &ru LA(H)          &trans               &lt 10 LS(SLASH)  &kp SLASH          &kp PRCNT
             >;
