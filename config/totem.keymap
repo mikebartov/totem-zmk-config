@@ -489,6 +489,34 @@
                                                    &mo 11       &lt_custom 5 ENTER  &ru_caps_off SPACE    &lt 10 LS(N6)  &lt 7 ESC      &sk LSHIFT
             >;
         };
+
+        navnum_en {
+            bindings = <
+        &trans  &trans                &kp LG(LBKT)     &kp LG(RBKT)   &trans        &kp MINUS     &kp N7     &kp N8     &kp N9     &kp COLON
+        &trans  &kp LA(LG(C))         &kp LS(LC(TAB))  &kp LC(TAB)    &trans        &kp PLUS      &kp N4     &kp N5     &kp N6     &kp N0
+&trans  &trans  &kp LS(LA(LG(RBKT)))  &kp LC(LG(W))    &kp LC(LG(E))  &trans        &kp ASTRK     &kp N1     &kp N2     &kp N3     &kp KP_DIVIDE   &comma_space_en
+                                      &trans           &trans         &trans        &lt 10 COMMA  &kp DOT    &kp PRCNT
+            >;
+        };
+
+        navnum_ru {
+            bindings = <
+        &trans  &trans                &kp LG(LBKT)     &kp LG(RBKT)   &trans        &mt LA(MINUS) MINUS  &kp N7    &kp N8     &kp N9  &kp COLON
+        &trans  &kp LA(LG(C))         &kp LS(LC(TAB))  &kp LC(TAB)    &trans        &kp PLUS             &kp N4    &kp N5     &kp N6  &kp N0
+&trans  &trans  &kp LS(LA(LG(RBKT)))  &kp LC(LG(W))    &kp LC(LG(E))  &trans        &kp ASTRK            &kp N1    &kp N2     &kp N3  &kp KP_DIVIDE  &comma_space_ru
+                                      &trans           &trans         &trans        &lt 10 LS(FSLH)      &kp FSLH  &kp PRCNT
+            >;
+        };
+
+        app {
+            bindings = <
+                       &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))     &kp LG(MINUS)  &kp LS(LA(LG(W)))  &kp LS(LA(LG(E)))  &kp LS(LA(LG(R)))  &trans
+                       &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))     &kp LG(EQUAL)  &kp LS(LA(LG(S)))  &kp LS(LA(LG(D)))  &kp LS(LA(LG(F)))  &kp LS(LA(LG(G)))
+&kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))     &kp LG(N0)     &kp LS(LA(LG(X)))  &kp LS(LA(LG(C)))  &kp LS(LA(LG(V)))  &kp LS(LA(LG(A)))  &trans
+                                                                     &trans                 &trans                 &trans                    &trans         &trans             &trans
+            >;
+        };
+        
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
