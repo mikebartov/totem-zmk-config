@@ -438,19 +438,19 @@
 
         extra_en {
             bindings = <
-        &trans  &trans  &ru LA(LS(N4))  &ru LS(LA(N5))          &trans                    &kp F23  &kp F7         &kp F8  &kp F9  &trans
-        &trans  &trans  &trans          &trans                  &trans                    &kp F24  &kp F4         &kp F5  &kp F6  &trans
-&trans  &trans  &trans  &ru LA(N5)      &trans                  &trans                    &trans   &kp F1         &kp F2  &kp F3  &trans  &trans
-                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &kp LC(LG(Q))  &trans
+        &trans         &trans          &ru LA(LS(N4))  &ru LS(LA(N5))          &trans                    &kp F23  &kp F7         &kp F8  &kp F9  &trans
+        &ru LA(COMMA)  &ru LA(PERIOD)  &trans          &trans                  &trans                    &kp F24  &kp F4         &kp F5  &kp F6  &trans
+&trans  &trans         &trans          &ru LA(N5)      &trans                  &trans                    &trans   &kp F1         &kp F2  &kp F3  &trans  &trans
+                                       &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &kp LC(LG(Q))  &trans
             >;
         };
 
         extra_ru {
             bindings = <
-        &trans  &trans  &kp LA(LS(N4))  &kp LS(LA(N5))          &trans                    &kp F23  &kp F7         &kp F8  &kp F9  &trans
-        &trans  &trans  &trans          &trans                  &trans                    &kp F24  &kp F4         &kp F5  &kp F6  &trans
-&trans  &trans  &trans  &kp LA(N5)      &trans                  &trans                    &trans   &kp F1         &kp F2  &kp F3  &trans  &trans
-                        &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &kp LC(LG(Q))  &trans
+        &trans         &trans          &kp LA(LS(N4))  &kp LS(LA(N5))          &trans                    &kp F23  &kp F7         &kp F8  &kp F9  &trans
+        &kp LA(COMMA)  &kp LA(PERIOD)  &trans          &trans                  &trans                    &kp F24  &kp F4         &kp F5  &kp F6  &trans
+&trans  &trans         &trans          &kp LA(N5)      &trans                  &trans                    &trans   &kp F1         &kp F2  &kp F3  &trans  &trans
+                                       &trans          &kp LS(LA(LC(LG(N2))))  &kp LS(LA(LC(LG(N1))))    &trans   &kp LC(LG(Q))  &trans
             >;
         };
 
