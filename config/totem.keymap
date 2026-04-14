@@ -351,6 +351,7 @@
             #binding-cells = <0>;
             bindings = <&kp DOT &ru LA(SPACE)>;
             label = "DOT_NBSP_EN";
+            wait-ms = <50>;
         };
 
         dot_nbsp_ru: dot_nbsp_ru {
@@ -358,6 +359,7 @@
             #binding-cells = <0>;
             bindings = <&en DOT &kp LA(SPACE)>;
             label = "DOT_NBSP_RU";
+            wait-ms = <50>;
         };
     };
 
