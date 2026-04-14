@@ -345,6 +345,20 @@
             bindings = <&kp FSLH &kp SPACE &sk LSHIFT>;
             label = "PERIOD_SPACE_SHIFT_RU";
         };
+
+        dot_nbsp_en: dot_nbsp_en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &ru LA(SPACE)>;
+            label = "DOT_NBSP_EN";
+        };
+
+        dot_nbsp_ru: dot_nbsp_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&en DOT &kp LA(SPACE)>;
+            label = "DOT_NBSP_RU";
+        };
     };
 
     keymap {
@@ -370,19 +384,19 @@
 
         sym_en {
             bindings = <
-       &kp CARET     &kp SQT           &kp LBRC        &kp RBRC   &kp GRAVE    &kp AT        &kp HASH  &kp DOLLAR  &kp AMPS   &kp PIPE
-       &kp LT        &kp GT            &kp LPAR        &kp RPAR   &kp SEMI     &kp PLUS      &kp EXCL  &kp MINUS   &kp QMARK  &kp EQUAL
-&none  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LBKT        &kp RBKT   &kp DQT      &kp ASTRK     &kp FSLH  &kp UNDER   &kp BSLH   &kp TILDE  &none
-                                       &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 COMMA  &kp DOT   &kp PRCNT
+              &kp CARET     &kp SQT           &kp LBRC        &kp RBRC   &kp GRAVE    &kp AT        &kp HASH  &kp DOLLAR  &kp AMPS   &kp PIPE
+              &kp LT        &kp GT            &kp LPAR        &kp RPAR   &kp SEMI     &kp PLUS      &kp EXCL  &kp MINUS   &kp QMARK  &kp EQUAL
+&dot_nbsp_en  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LBKT        &kp RBKT   &kp DQT      &kp ASTRK     &kp FSLH  &kp UNDER   &kp BSLH   &kp TILDE  &none
+                                              &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 COMMA  &kp DOT   &kp PRCNT
             >;
         };
 
         sym_ru {
             bindings = <
-       &en CARET     &en SQT           &en LBRC        &en RBRC   &en GRAVE    &en AT           &en HASH  &en DOLLAR  &en AMPS   &en PIPE
-       &en LT        &en GT            &kp LPAR        &kp RPAR   &en SEMI     &kp PLUS         &kp EXCL  &kp MINUS   &en QMARK  &kp EQUAL
-&none  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LBKT        &en RBKT   &en DQT      &kp ASTRK        &en FSLH  &kp UNDER   &kp BSLH   &en TILDE  &none
-                                       &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 LS(FSLH)  &en DOT   &kp PRCNT
+              &en CARET     &en SQT           &en LBRC        &en RBRC   &en GRAVE    &en AT           &en HASH  &en DOLLAR  &en AMPS   &en PIPE
+              &en LT        &en GT            &kp LPAR        &kp RPAR   &en SEMI     &kp PLUS         &kp EXCL  &kp MINUS   &en QMARK  &kp EQUAL
+&dot_nbsp_ru  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LBKT        &en RBKT   &en DQT      &kp ASTRK        &en FSLH  &kp UNDER   &kp BSLH   &en TILDE  &none
+                                              &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 LS(FSLH)  &en DOT   &kp PRCNT
             >;
         };
 
