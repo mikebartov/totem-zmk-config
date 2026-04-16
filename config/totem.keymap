@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "keys_ru.h"
 
 &mt {
     quick-tap-ms = <180>;
@@ -349,9 +350,11 @@
         dot_nbsp_en: dot_nbsp_en {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOT &ru LA(SPACE)>;
+            bindings = 
+              <&kp DOT &ru LA(SPACE)>
+              , <&macro_wait_time 300>
+              ;
             label = "DOT_NBSP_EN";
-            wait-ms = <300>;
         };
 
         dot_nbsp_ru: dot_nbsp_ru {
