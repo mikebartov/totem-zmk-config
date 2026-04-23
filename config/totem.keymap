@@ -371,19 +371,19 @@
 
         ru {
             bindings = <
-                     &mt LG(Q) RU_CYRILLIC_SHORT_I  &mt LG(W) RU_CYRILLIC_TSE    &kp RU_CYRILLIC_U         &mt LG(R) RU_CYRILLIC_KA   &mt RU_CYRILLIC_IO RU_CYRILLIC_IE    &kp RU_CYRILLIC_EN        &kp RU_CYRILLIC_GHE                              &mt RU_CYRILLIC_SHCHA RU_CYRILLIC_SHA  &mt LG(O) RU_CYRILLIC_ZE   &mt LG(P) RU_CYRILLIC_HA
-                     &hml LGUI RU_CYRILLIC_EF       &hml LCTRL RU_CYRILLIC_YERU  &hml LALT RU_CYRILLIC_VE  &hml LSHIFT RU_CYRILLIC_A  &lt 9 RU_CYRILLIC_PE                 &lt 9 RU_CYRILLIC_ER      &hmr RSHIFT RU_CYRILLIC_O                        &hmr RALT RU_CYRILLIC_EL               &hmr RCTRL RU_CYRILLIC_DE  &hmr RGUI RU_CYRILLIC_ZHE
-&dot_space_shift_ru  &lt 12 RU_CYRILLIC_YA          &mt LG(X) RU_CYRILLIC_CHE    &mt LG(C) RU_CYRILLIC_ES  &mt LG(V) RU_CYRILLIC_EM   &kp RU_CYRILLIC_I                    &mt LG(N) RU_CYRILLIC_TE  &mt RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE                     &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E          &comma_space_ru
+                     &mt LG(Q) RU_CYRILLIC_SHORT_I  &mt LG(W) RU_CYRILLIC_TSE    &kp RU_CYRILLIC_U         &mt LG(R) RU_CYRILLIC_KA   &mt RU_CYRILLIC_IO RU_CYRILLIC_IE    &kp RU_CYRILLIC_EN        &kp RU_CYRILLIC_GHE                              &kp RU_CYRILLIC_SHA       &mt LG(O) RU_CYRILLIC_ZE   &mt LG(P) RU_CYRILLIC_HA
+                     &hml LGUI RU_CYRILLIC_EF       &hml LCTRL RU_CYRILLIC_YERU  &hml LALT RU_CYRILLIC_VE  &hml LSHIFT RU_CYRILLIC_A  &lt 9 RU_CYRILLIC_PE                 &lt 9 RU_CYRILLIC_ER      &hmr RSHIFT RU_CYRILLIC_O                        &hmr RALT RU_CYRILLIC_EL  &hmr RCTRL RU_CYRILLIC_DE  &hmr RGUI RU_CYRILLIC_ZHE
+&dot_space_shift_ru  &lt 12 RU_CYRILLIC_YA          &mt LG(X) RU_CYRILLIC_CHE    &mt LG(C) RU_CYRILLIC_ES  &mt LG(V) RU_CYRILLIC_EM   &kp RU_CYRILLIC_I                    &mt LG(N) RU_CYRILLIC_TE  &mt RU_CYRILLIC_HARD_SIGN RU_CYRILLIC_SOFT_SIGN  &kp RU_CYRILLIC_BE        &kp RU_CYRILLIC_YU         &kp RU_CYRILLIC_E          &comma_space_ru
                                                                                  &mo 5                     &lt 11 ENTER               &lt 3 SPACE                          &lt 10 RU_COLON           &lt 7 ESC                                        &sk LSHIFT
             >;
         };
 
         sym_en {
             bindings = <
-              &kp CARET     &kp SQT           &kp LBRC        &kp RBRC   &kp GRAVE    &kp AT        &kp HASH  &kp DOLLAR  &kp AMPS   &kp PIPE
-              &kp LT        &kp GT            &kp LPAR        &kp RPAR   &kp SEMI     &kp PLUS      &kp EXCL  &kp MINUS   &kp QMARK  &kp EQUAL
-&dot_nbsp_en  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LBKT        &kp RBKT   &kp DQT      &kp ASTRK     &kp FSLH  &kp UNDER   &kp BSLH   &kp TILDE  &none
-                                              &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 COMMA  &kp DOT   &kp PRCNT
+       &kp CARET     &kp SQT           &kp LBRC        &kp RBRC   &kp GRAVE    &kp AT        &kp HASH  &kp DOLLAR  &kp AMPS   &kp PIPE
+       &kp LT        &kp GT            &kp LPAR        &kp RPAR   &kp SEMI     &kp PLUS      &kp EXCL  &kp MINUS   &kp QMARK  &kp EQUAL
+&none  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LBKT        &kp RBKT   &kp DQT      &kp ASTRK     &kp FSLH  &kp UNDER   &kp BSLH   &kp TILDE  &none
+                                       &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 COMMA  &kp DOT   &kp PRCNT
             >;
         };
 
@@ -398,37 +398,37 @@
 
         navnum_en {
             bindings = <
-        &trans  &trans                &kp LG(LBKT)     &kp LG(RBKT)   &trans    &kp MINUS     &kp N7   &kp N8     &kp N9  &kp COLON
-        &trans  &kp LA(LG(C))         &kp LS(LC(TAB))  &kp LC(TAB)    &trans    &kp PLUS      &kp N4   &kp N5     &kp N6  &kp N0
-&trans  &trans  &kp LS(LA(LG(RBKT)))  &kp LC(LG(W))    &kp LC(LG(E))  &trans    &kp ASTRK     &kp N1   &kp N2     &kp N3  &kp KP_DIVIDE  &comma_space_en
-                                      &trans           &trans         &trans    &lt 10 COMMA  &kp DOT  &kp PRCNT
+        &trans           &trans                &kp LG(LBKT)     &kp LG(RBKT)   &trans    &kp MINUS     &kp N7   &kp N8     &kp N9  &kp COLON
+        &kp LS(LG(TAB))  &kp LG(TAB)           &kp LS(LC(TAB))  &kp LC(TAB)    &trans    &kp PLUS      &kp N4   &kp N5     &kp N6  &kp N0
+&trans  &kp LA(LG(C))    &kp LS(LA(LG(RBKT)))  &kp LC(LG(W))    &kp LC(LG(E))  &trans    &kp ASTRK     &kp N1   &kp N2     &kp N3  &kp KP_DIVIDE  &comma_space_en
+                                               &trans           &trans         &trans    &lt 10 COMMA  &kp DOT  &kp PRCNT
             >;
         };
 
         navnum_ru {
             bindings = <
-        &trans  &trans                &kp LG(LBKT)     &kp LG(RBKT)   &trans    &mt LA(MINUS) MINUS  &kp N7    &kp N8     &kp N9  &kp COLON
-        &trans  &kp LA(LG(C))         &kp LS(LC(TAB))  &kp LC(TAB)    &trans    &kp PLUS             &kp N4    &kp N5     &kp N6  &kp N0
-&trans  &trans  &kp LS(LA(LG(RBKT)))  &kp LC(LG(W))    &kp LC(LG(E))  &trans    &kp ASTRK            &kp N1    &kp N2     &kp N3  &kp KP_DIVIDE  &comma_space_ru
-                                      &trans           &trans         &trans    &lt 10 LS(FSLH)      &kp FSLH  &kp PRCNT
+        &trans           &trans                &kp LG(LBKT)     &kp LG(RBKT)   &trans    &mt LA(MINUS) MINUS  &kp N7      &kp N8     &kp N9  &kp COLON
+        &kp LS(LG(TAB))  &kp LG(TAB)           &kp LS(LC(TAB))  &kp LC(TAB)    &trans    &kp PLUS             &kp N4      &kp N5     &kp N6  &kp N0
+&trans  &kp LA(LG(C))    &kp LS(LA(LG(RBKT)))  &kp LC(LG(W))    &kp LC(LG(E))  &trans    &kp ASTRK            &kp N1      &kp N2     &kp N3  &kp KP_DIVIDE  &comma_space_ru
+                                               &trans           &trans         &trans    &lt 10 RU_COMMA      &kp RU_DOT  &kp PRCNT
             >;
         };
 
         macro_en {
             bindings = <
         &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &add_section  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
+        &kp LS(LG(N0))  &add_section  &kp LA(MINUS)  &kp LS(LG(M))  &trans       &kp LA(LC(LG(M)))  &kp LS(F3)      &kp LA(LC(LG(Z)))  &kp LA(LC(LG(N2)))  &kp LA(LC(LG(S)))
 &trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &kp LA(LC(A))   &kp LA(LC(R))      &kp LG(N8)          &kp LA(LC(LG(G)))  &trans
-                                      &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
+                                      &trans         &kp LG(ENTER)  &kp K_APP    &trans             &trans          &kp LC(LG(C))
             >;
         };
 
         macro_ru {
             bindings = <
         &trans          &trans        &kp LC(LG(K))  &kp LA(LC(R))  &trans       &kp LA(LG(N6))     &kp LA(LG(N7))  &kp LA(LG(N8))     &kp LG(O)           &kp LG(P)
-        &kp LS(LG(N0))  &add_section  &kp LA(MINUS)  &kp LS(LG(M))  &kp K_APP    &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
+        &kp LS(LG(N0))  &add_section  &kp LA(MINUS)  &kp LS(LG(M))  &trans       &kp LA(LC(LG(M)))  &kp LS(F3)      &en LA(LC(LG(Z)))  &en LA(LC(LG(N2)))  &en LA(LC(LG(S)))
 &trans  &trans          &trans        &kp LS(LG(C))  &kp LA(LC(V))  &trans       &trans             &en LA(LC(A))   &en LA(LC(R))      &kp LG(N8)          &en LA(LC(LG(G)))  &trans
-                                      &trans         &kp LG(ENTER)  &kp F1       &trans             &trans          &kp LC(LG(C))
+                                      &trans         &kp LG(ENTER)  &kp K_APP    &trans             &trans          &kp LC(LG(C))
             >;
         };
 
