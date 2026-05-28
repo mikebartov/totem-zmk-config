@@ -51,13 +51,11 @@
             hold-trigger-on-release;
         };
 
-        lt_custom: lt_custom {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_CUSTOM";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
+        ide: ide {
+            compatible = "zmk,behavior-tap-dance";
+            label = "IDE";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(LC(LG(C))))>, <&kp LS(LA(LC(LG(W))))>;
         };
     };
 
@@ -447,10 +445,10 @@
 
         app {
             bindings = <
-                       &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &kp LG(MINUS)  &kp LS(LA(LG(W)))  &kp LS(LA(LG(E)))  &kp LS(LA(LG(R)))  &trans
+                       &kp LS(LA(LC(LG(L))))  &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &kp LG(MINUS)  &kp LS(LA(LG(W)))  &kp LS(LA(LG(E)))  &kp LS(LA(LG(R)))  &trans
                        &kp LS(LA(LC(LG(Z))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(B))))  &kp LS(LA(LC(LG(G))))    &kp LG(EQUAL)  &kp LS(LA(LG(S)))  &kp LS(LA(LG(D)))  &kp LS(LA(LG(F)))  &kp LS(LA(LG(G)))
 &kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(N))))  &kp LS(LA(LC(LG(K))))  &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(I))))  &kp LS(LA(LC(LG(M))))    &kp LG(N0)     &kp LS(LA(LG(X)))  &kp LS(LA(LG(C)))  &kp LS(LA(LG(V)))  &kp LS(LA(LG(A)))  &trans
-                                                                     &trans                 &trans                 &trans                   &mo 10         &trans             &trans
+                                                                     &trans                 &trans                 &trans                   &ide           &trans             &trans
             >;
         };
 
