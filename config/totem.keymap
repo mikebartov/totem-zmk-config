@@ -365,8 +365,8 @@
         sym_en {
             bindings = <
        &kp CARET     &kp SQT           &kp LBRC        &kp RBRC   &kp GRAVE    &kp AT        &kp HASH  &kp DOLLAR  &kp AMPS   &kp PIPE
-       &kp LT        &kp GT            &kp LPAR        &kp RPAR   &kp SEMI     &kp PLUS      &kp EXCL  &kp UNDER   &kp QMARK  &kp EQUAL
-&none  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LBKT        &kp RBKT   &kp DQT      &kp ASTRK     &kp FSLH  &kp COLON   &kp BSLH   &kp TILDE  &none
+       &kp LT        &kp GT            &kp LPAR        &kp RPAR   &kp SEMI     &kp PLUS      &kp EXCL  &kp COLON   &kp QMARK  &kp EQUAL
+&none  &ru LA(SEMI)  &ru LS(LA(SEMI))  &kp LBKT        &kp RBKT   &kp DQT      &kp ASTRK     &kp FSLH  &kp UNDER   &kp BSLH   &kp TILDE  &none
                                        &ru LS(LA(N8))  &ru LA(H)  &trans       &lt 10 COMMA  &kp DOT   &kp PRCNT
             >;
         };
@@ -374,8 +374,8 @@
         sym_ru {
             bindings = <
               &en CARET     &en SQT           &en LBRC        &en RBRC   &en GRAVE      &en AT           &en HASH     &en DOLLAR    &en AMPS         &en PIPE
-              &en LT        &en GT            &kp LPAR        &kp RPAR   &kp RU_SEMI    &kp PLUS         &kp EXCL     &kp RU_UNDER  &kp RU_QUESTION  &kp EQUAL
-&dot_nbsp_ru  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LBKT        &en RBKT   &kp RU_DQT     &kp ASTRK        &kp RU_FSLH  &kp RU_COLON  &kp RU_BSLH      &en TILDE  &none
+              &en LT        &en GT            &kp LPAR        &kp RPAR   &kp RU_SEMI    &kp PLUS         &kp EXCL     &kp RU_COLON  &kp RU_QUESTION  &kp EQUAL
+&dot_nbsp_ru  &kp LA(SEMI)  &kp LS(LA(SEMI))  &en LBKT        &en RBKT   &kp RU_DQT     &kp ASTRK        &kp RU_FSLH  &kp RU_UNDER  &kp RU_BSLH      &en TILDE  &none
                                               &ru LS(LA(N8))  &ru LA(H)  &trans         &lt 10 RU_COMMA  &kp RU_DOT   &kp PRCNT
             >;
         };
@@ -439,7 +439,7 @@
         &trans        &trans     &trans     &trans      &kp DEL                  &kp BSPC      &kp LC(LEFT)    &kp UP        &kp LC(RIGHT)  &trans
         &kp LEFT_GUI  &kp LCTRL  &kp LALT   &kp LSHIFT  &kp ESC                  &kp LA(LEFT)  &kp LEFT        &kp DOWN      &kp RIGHT      &kp LA(RIGHT)
 &trans  &trans        &trans     &mkp RCLK  &mkp LCLK   &kp LS(LA(LC(LG(P))))    &kp LG(LEFT)  &msc SCRL_DOWN  &msc SCRL_UP  &kp LA(F20)    &kp LG(RIGHT)  &trans
-                                 &trans     &kp ENTER   &kp SPACE                &none         &kp LC(LG(Q))   &trans
+                                 &trans     &kp ENTER   &kp SPACE                &none         &none           &trans
             >;
         };
 
